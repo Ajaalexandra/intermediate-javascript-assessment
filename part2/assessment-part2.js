@@ -11,8 +11,8 @@
 // You must use two .then functions to handle the response object.
 // Chain these functions off of $http (do not put them in variables)
 // The response object will look like this :
-    //
-    // {
+    // //
+    // // {
     //   data: [
     //     {
     //   		email: "awilliams0@intel.com",
@@ -20,12 +20,12 @@
     //   		gender: "Male",
     //   		id: 1,
     //   		last_name: "Williams"
-    //     },
-    //     {
-    //       //...
-    //     }
-    //   ]
-    // }
+    // //     },
+    // //     {
+    // //       //...
+    // //     }
+    // //   ]
+    // // }
 
 
 // In the first .then function you use, assign the first user object (located in the response object)
@@ -44,6 +44,12 @@ function noWeakLink() {
     url: '/api/users'
   })
   // CODE HERE...
+ .then(function(firstUser){
+   return firstUser;
+ })
+ .then(function(thirdUser){
+   return thirdUser;
+ })
 
 }
 
@@ -74,7 +80,7 @@ function large() {
   return 'My name is ' + this.name + ' and I am very heavy!'
 }
 // CODE HERE...
-
+var boundToElephant = BOUND;
 
 
 // *************
@@ -88,7 +94,9 @@ function large() {
 // and return the bound function.
 //
 // CODE HERE...
+function deathStar(capacity, crew){
 
+}
 
 
 // *************
@@ -103,7 +111,10 @@ function large() {
 // The closure function will return the combined value of assets and liabilities.
 
 // CODE HERE...
+function accountingOffice(assets){
 
+
+}
 
 
 // *************
@@ -158,3 +169,7 @@ function forgetter(String){
 // NOTE: Neither hunger nor danger should be able to exceed 100 or drop below 0.
 
 // CODE HERE...
+
+function frodo (startingHungerValue, startingDangerValue){
+
+}

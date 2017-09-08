@@ -11,10 +11,9 @@
 // Find the animal that matches the given id, then call the update function
 // with the animal as the context, and 'Trogdor' as a parameter.
 // return the result of your updateAnimal invocation
+var callBinding =  function(magicAnimals,updateAnimal,id){
 
-// CODE HERE...
-function callBinding(magicAnimals, updateAnimal, id){
-
+  return updateAnimal.call(magicAnimals[id],"Trogdor")
 }
 
 
@@ -30,6 +29,10 @@ function callBinding(magicAnimals, updateAnimal, id){
 // return the result of your updateAnimal invocation
 
 // CODE HERE...
+
+
+
+
 
 
 
@@ -50,7 +53,14 @@ function callBinding(magicAnimals, updateAnimal, id){
 var foo;
 
 // CODE HERE...
-
+var promiseMe = function ($q){
+  var deferred = $q.defer()
+  setTimeout(function () {
+      foo='bar'
+      deferred.resolve(foo)
+  }, 20);
+  return deferred.promise;
+}
 
 
 // *************
@@ -66,3 +76,17 @@ var foo;
 // and then resolve the array as you complete your promise.
 
 // CODE HERE...
+var emailList = function($q,$http){
+  var deferred = $q.defer()
+  $http.get('/api/users').then(function(response){
+    var arr = response.data
+    var arrEmail = []
+    for (var item in arr){
+
+      arrEmail.push(arr[item].email)
+    }
+    deferred.resolve(arrEmail)
+  })
+
+  return deferred.promise;
+}
